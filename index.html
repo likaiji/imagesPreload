@@ -5,11 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>图片预加载 一</title>
+    <title>图片预加载 无序加载</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
 
+    <div class="box">
+        <img src="https://www.ftjubao.com/uploadfile//p2p/slide/5873C6D83CA749C6A045B245076D95E2.jpg" width="1000" alt="" id="img">
+
+        <p>
+            <a href="javascript:;" data-control="prev" class="btn">上一页</a>
+            <a href="javascript:;" data-control="next" class="btn">下一页</a>
+        </p>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index(noPreLoad).js"></script>
 </body>
 
 </html>

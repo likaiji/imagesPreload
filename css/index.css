@@ -1,0 +1,16 @@
+.box {
+  text-align: center; }
+  .box .btn {
+    display: inline-block;
+    height: 30px;
+    text-decoration: none;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 0 10px;
+    color: #333;
+    font-size: 14px; }
+    .box .btn:hover {
+      color: #333; }
+
+/*# sourceMappingURL=index.css.map */
