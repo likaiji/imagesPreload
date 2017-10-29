@@ -23,6 +23,7 @@
     PreLoad.prototype._unoredered = function() {
         var imgArr = this.imgs;
         var opts = this.opts;
+        var count = 0;
         var len = this.imgs.length;
 
         //无序加载
