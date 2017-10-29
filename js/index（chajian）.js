@@ -8,18 +8,23 @@
         // 将options覆盖PreLoad.DEFAULTS，生成一个新的对象，然后返回给this.opts（$.extend（）的使用）
         this.opts = $.extend({}, PreLoad.DEFAULTS, options);
 
-        //执行无序加载方法
-        this._unoredered();
+        //通过参数判断执行无序加载还是有序加载方法
+        if (this.opts.order === 'ordered') { //有序预加载
+            this._ordered();
+        } else { //无序预加载
+            this._unoredered();
+        }
     }
 
     // 如果没有传递第二个参数，使用这个默认参数
     PreLoad.DEFAULTS = {
+        order: 'unordered', //默认无序预加载
         each: null, //每张图片加载完毕执行方法
         all: null //所有图片加载完毕执行方法
     }
 
 
-    //将_unoredered写在原型上
+    //将_unoredered写在原型上（无序预加载）
     PreLoad.prototype._unoredered = function() {
         var imgArr = this.imgs;
         var opts = this.opts;
@@ -55,6 +60,39 @@
             });
         })
     }
+
+
+    //将_unoredered写在原型上（有序预加载）
+    PreLoad.prototype._ordered = function() {
+        var opts = this.opts,
+            imgArr = this.imgs,
+            count = 0,
+            len = this.imgs.length;
+
+        load();
+
+        //有序预加载图片
+        function load() {
+            var imgObj = new Image();
+
+            //每次图片加载完成或者失败时候执行的代码
+            $(imgObj).on('load error', function() {
+                opts.each && opts.each(count);
+
+                if (count >= len) { //所有图片已经加载完毕
+                    opts.all && opts.all();
+                } else {
+                    load(); //自调用
+                }
+                count++;
+            });
+
+            imgObj.src = imgArr[count];
+            console.log(imgObj)
+        }
+
+    }
+
 
     $.extend({
         preload: function(imgs, opts) {

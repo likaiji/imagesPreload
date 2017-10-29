@@ -1,34 +1,38 @@
 var imgArr = [
-    'https://www.ftjubao.com/uploadfile//p2p/slide/5873C6D83CA749C6A045B245076D95E2.jpg',
-    'https://www.ftjubao.com/uploadfile//p2p/slide/41F1AD0F1067407C9C67D36F67D2F13B.jpg',
-    'https://www.ftjubao.com/uploadfile//p2p/slide/10EF9F8553C046CC8902E8835D087B97.jpg',
-    'https://www.ftjubao.com/uploadfile//p2p/slide/ED02090E478F48D09B4369168A79660C.jpg'
+    'http://img3.u17i.com/16/05/5553/29137_1462676045_ZSeuXpGuaq5B.0ce1d_svol.jpg',
+    'http://img3.u17i.com/10/06/5553/29137_1277655020_I3Z0fhi0TPtr.c568e_svol.jpg',
+    'http://img3.u17i.com/10/06/5553/29137_1277655023_pjbih5HPPsIY.e4cbd_svol.jpg',
+    'http://img3.u17i.com/10/06/5553/29137_1277655025_I6TXs6A7rSWx.55acd_svol.jpg',
+    'http://img3.u17i.com/10/06/5553/29137_1277655027_6M5JWK2qKTWq.813d8_svol.jpg',
+    'http://img3.u17i.com/10/06/5553/29137_1277655030_waa00ALZ0fgj.6d150_svol.jpg',
+    'http://img3.u17i.com/10/06/5553/29137_1277655033_uk66hh3JAhk1.60f16_svol.jpg'
 ];
 
-var index = 0;
 var len = imgArr.length;
-var count = 0;
-var $progress = $('.progress');
+var count = 0; /*加载到第几张图片*/
+var index = 0; //当前浏览到第几张图片
 
-//无序加载
-$.each(imgArr, function(index, src) {
-    // 实例化一个 Image对象，<img> 标签每出现一次，一个 Image 对象就会被创建。
+/*思路：先加载第一张图片，第一张加载完再继续加载第二章，以此内推*/
+
+//有序预加载图片
+function load() {
     var imgObj = new Image();
-    console.log(imgObj) //此时会打出   <img>
 
+    //每次图片加载完成或者失败时候执行的代码
     $(imgObj).on('load error', function() {
-        $progress.html(Math.round((count + 1) / len * 100) + '%');
-        if (count >= len - 1) {
-            $('.loading').hide();
-            document.title = "1/" + len;
+        if (count >= len) { //所有图片已经加载完毕
+
+        } else {
+            load(); //自调用
         }
         count++;
     });
 
+    imgObj.src = imgArr[count];
+    console.log(imgObj)
+}
+load();
 
-    // 将上面实例化生成的 <img> 添加src属性
-    imgObj.src = src;
-})
 
 //点击上下切换
 $(".btn").click(function() {
