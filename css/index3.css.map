@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAK;EACD,UAAU,EAAE,MAAM;EAClB,SAAK;IACD,OAAO,EAAE,YAAY;IACrB,MAAM,EAAE,IAAI;IACZ,eAAe,EAAE,IAAI;IACrB,WAAW,EAAE,IAAI;IACjB,MAAM,EAAE,cAAc;IACtB,gBAAgB,EAAE,IAAI;IACtB,OAAO,EAAE,MAAM;IACf,KAAK,EAAE,IAAI;IACX,SAAS,EAAE,IAAI;IACf,eAAQ;MACJ,KAAK,EAAE,IAAI",
-"sources": ["index3.scss"],
-"names": [],
-"file": "index3.css"
-}
+{"version":3,"sources":["index3.css"],"names":[],"mappings":"AAAA,UAAU,iBAAiB,CAAC,eAAe,qBAAqB,YAAY,qBAAqB,iBAAiB,sBAAsB,sBAAsB,eAAe,WAAW,cAAc,CAAC,qBAAqB,UAAU,CAAC","file":"index3.css","sourcesContent":["body .box{text-align:center}body .box .btn{display:inline-block;height:30px;text-decoration:none;line-height:30px;border:1px solid #ccc;background-color:#fff;padding:0 10px;color:#333;font-size:14px}body .box .btn:hover{color:#333}\n"]}

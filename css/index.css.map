@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": ";AAAA;IACK;EACD,MAAM,EAAE,IAAI;EAkBZ,UAAU;EAjBV;WAAK;IACD,UAAU,EAAE,MAAM;IAClB;kBAAK;MACD,OAAO,EAAE,YAAY;MACrB,MAAM,EAAE,IAAI;MACZ,eAAe,EAAE,IAAI;MACrB,WAAW,EAAE,IAAI;MACjB,MAAM,EAAE,cAAc;MACtB,gBAAgB,EAAE,IAAI;MACtB,OAAO,EAAE,MAAM;MACf,KAAK,EAAE,IAAI;MACX,SAAS,EAAE,IAAI;MACf;0BAAQ;QACJ,KAAK,EAAE,IAAI;EAKvB;eAAS;IACL,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI;IACZ,QAAQ,EAAE,KAAK;IACf,GAAG,EAAE,CAAC;IACN,IAAI,EAAE,CAAC;IACP,gBAAgB,EAAE,IAAI;IACtB,UAAU,EAAE,MAAM;IAClB,SAAS,EAAE,IAAI;IACf;2BAAU;MACN,WAAW,EAAE,KAAK",
-"sources": ["index.scss"],
-"names": [],
-"file": "index.css"
-}
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,UAAU,WAAW,CAAC,oBAAoB,iBAAiB,CAAC,8BAA8B,qBAAqB,YAAY,qBAAqB,iBAAiB,sBAAsB,sBAAsB,eAAe,WAAW,cAAc,CAAC,0CAA0C,UAAU,CAAC,4BAA4B,WAAW,YAAY,eAAe,MAAM,OAAO,sBAAsB,kBAAkB,cAAc,CAAC,gDAAgD,iBAAiB,CAAC","file":"index.css","sourcesContent":["html,body{height:100%}html .box,body .box{text-align:center}html .box .btn,body .box .btn{display:inline-block;height:30px;text-decoration:none;line-height:30px;border:1px solid #ccc;background-color:#fff;padding:0 10px;color:#333;font-size:14px}html .box .btn:hover,body .box .btn:hover{color:#333}html .loading,body .loading{width:100%;height:100%;position:fixed;top:0;left:0;background-color:#eee;text-align:center;font-size:16px}html .loading .progress,body .loading .progress{padding-top:300px}\n"]}
